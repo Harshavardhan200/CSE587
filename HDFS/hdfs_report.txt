@@ -1,0 +1,42 @@
+Configured Capacity: 1081101176832 (1006.85 GB)
+Present Capacity: 987546796032 (919.72 GB)
+DFS Remaining: 950588665856 (885.30 GB)
+DFS Used: 36958130176 (34.42 GB)
+DFS Used%: 3.74%
+Replicated Blocks:
+	Under replicated blocks: 0
+	Blocks with corrupt replicas: 0
+	Missing blocks: 0
+	Missing blocks (with replication factor 1): 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+Erasure Coded Block Groups: 
+	Low redundancy block groups: 0
+	Block groups with corrupt internal blocks: 0
+	Missing block groups: 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+
+-------------------------------------------------
+Live datanodes (1):
+
+Name: 172.18.0.2:9866 (cse587project-datanode1-1.cse587project_default)
+Hostname: 4188b9e3d270
+Decommission Status : Normal
+Configured Capacity: 1081101176832 (1006.85 GB)
+DFS Used: 36958130176 (34.42 GB)
+Non DFS Used: 38562025472 (35.91 GB)
+DFS Remaining: 950588665856 (885.30 GB)
+DFS Used%: 3.42%
+DFS Remaining%: 87.93%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 0
+Last contact: Sat Mar 22 10:59:54 UTC 2025
+Last Block Report: Sat Mar 22 09:54:24 UTC 2025
+Num of Blocks: 277
+
+

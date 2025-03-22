@@ -1,0 +1,5 @@
+drwxr-xr-x   - hadoop supergroup          0 2025-03-22 09:45 /input
+-rw-r--r--   1 hadoop supergroup  9006762395 2025-03-22 09:37 /input/2019-Nov.csv
+-rw-r--r--   1 hadoop supergroup  5668612855 2025-03-22 09:40 /input/2019-Oct.csv
+-rw-r--r--   1 hadoop supergroup 14675375250 2025-03-22 09:45 /input/merged_2019.csv
+
