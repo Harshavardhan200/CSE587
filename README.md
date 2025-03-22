@@ -4,37 +4,34 @@
 This project is part of **CSE587: Big Data Processing**, focusing on designing and implementing an **end-to-end big data pipeline** using Hadoop and Spark.  
 The dataset used is **eCommerce behavior data from a multi-category store**, sourced from [Kaggle](https://www.kaggle.com/datasets/mkechinov/ecommerce-behavior-data-from-multi-category-store).  
 
+---
+
 ## Dataset Description
 - The dataset contains user interactions on an eCommerce website, including views, adds to cart, and purchases.
 - Data is spread across multiple CSV files, including:
   - **2019-Oct.csv** (~5GB)
   - **2019-Nov.csv** (~9GB)
 
+---
+
 ## Project Steps
 
-### 1. Data Download and Preprocessing
+### 1. Download Dataset and Copy to Docker Hadoop
+
+#### **Step 1: Download Dataset**
 - Download the dataset from [Kaggle](https://www.kaggle.com/datasets/mkechinov/ecommerce-behavior-data-from-multi-category-store).
-- Extract the CSV files and place them in the local filesystem.
+- Extract CSV files and store them in the local filesystem.
 
-### 2. Exploratory Data Analysis (EDA)
-Performed EDA using **Pandas** in a Jupyter Notebook:
-- Checked missing values and handled inconsistencies.
-- Generated summary statistics.
-- Created visualizations for user interactions (e.g., views vs. purchases).
-- Identified key trends in eCommerce behavior.
+#### **Step 2: Copy Dataset to Docker Hadoop**
+Run the following command to copy data from the **local system to the Docker container running Hadoop**:
 
-### 3. Hadoop Setup and Data Ingestion
-- **Hadoop Cluster Setup**  
-  Used a `docker-compose.yml` file to launch a **local Hadoop cluster** with:
-  - NameNode
-  - DataNode
-  - ResourceManager
-  - NodeManagers
+```bash
+docker cp 2019-Oct.csv namenode:/input/
+docker cp 2019-Nov.csv namenode:/input/
 
-- **Data Upload to HDFS**  
-  Merged large files (`2019-Oct.csv`, `2019-Nov.csv`) and ingested them into HDFS using the following steps:
-  ```bash
-  hdfs dfs -mkdir -p /user/hadoop/ecommerce
-  hdfs dfs -put 2019-Oct.csv /user/hadoop/ecommerce/
-  hdfs dfs -put 2019-Nov.csv /user/hadoop/ecommerce/
-  hdfs dfs -ls /user/hadoop/ecommerce/
+hdfs dfs -mkdir /input
+hdfs dfs -put 2019-Oct.csv /input/
+hdfs dfs -put 2019-Nov.csv /input/
+hdfs dfs -ls /input/
+
+hdfs dfs -get /input/merged_2019.csv /tmp/merged_2019.csv
